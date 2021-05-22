@@ -51,12 +51,11 @@
 <meta property="og:image" content="http://example.com/2021/03/13/hexo-github/domain_name_list.png">
 <meta property="og:image" content="http://example.com/2021/03/13/hexo-github/domain_name_add.png">
 <meta property="og:image" content="http://example.com/2021/03/13/hexo-github/domain_name_add_info.png">
-<meta property="og:image" content="http://example.com/2021/03/13/hexo-github/github_creat_new_file.png">
-<meta property="og:image" content="http://example.com/2021/03/13/hexo-github/github_creat_CNAME.png">
+<meta property="og:image" content="http://example.com/2021/03/13/hexo-github/CNAME_finder.png">
 <meta property="og:image" content="http://example.com/2021/03/13/hexo-github/hexo_s_port_used.png">
 <meta property="og:image" content="http://example.com/2021/03/13/hexo-github/port_check.png">
 <meta property="article:published_time" content="2021-03-13T14:41:51.000Z">
-<meta property="article:modified_time" content="2021-05-21T16:33:24.997Z">
+<meta property="article:modified_time" content="2021-05-22T01:12:48.683Z">
 <meta property="article:author" content="JackChen">
 <meta property="article:tag" content="干货">
 <meta name="twitter:card" content="summary">
@@ -215,7 +214,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 00:33:24" itemprop="dateModified" datetime="2021-05-22T00:33:24+08:00">2021-05-22</time>
+                <time title="Modified: 2021-05-22 09:12:48" itemprop="dateModified" datetime="2021-05-22T09:12:48+08:00">2021-05-22</time>
               </span>
 
           
@@ -288,7 +287,9 @@
 <blockquote>
 <p>域名配置最常见有2种方式，CNAME和A记录，CNAME填写域名，A记录填写IP，由于不带www方式只能采用A记录，所以必须先ping一下你的用户名.github.io的IP，然后到你的域名DNS设置页，将A记录指向你ping出来的IP，将CNAME指向你的用户名.github.io，这样可以保证无论是否添加www都可以访问</p>
 </blockquote>
-<p>然后到你的github项目根目录新建一个名为CNAME的文件（无后缀），里面填写你的域名<br>打开你的GitHub对应的博客仓库<br><img src="/2021/03/13/hexo-github/github_creat_new_file.png"><br><img src="/2021/03/13/hexo-github/github_creat_CNAME.png"><br>然后点击最下方 <em>Commit new file</em></p>
+<p>然后到你hexo-&gt;public目录新建一个名为CNAME的文件（无后缀），里面填写你的域名<br>可直接使用命令生成 并发布到GitHub</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd hexo</span><br><span class="line">echo abcd.com &gt; .&#x2F;public&#x2F;CNAME</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/03/13/hexo-github/CNAME_finder.png"></p>
 <p>稍等几分钟，访问你购买的域名，你就能看到你的博客了。</p>
 <h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><h3 id="hexo-s-失败-端口被占用"><a href="#hexo-s-失败-端口被占用" class="headerlink" title="hexo s 失败(端口被占用)"></a>hexo s 失败(端口被占用)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/hexo_s_port_used.png"><br>hexo 默认端口为4000 首先检查4000端口是谁在占用</p>
