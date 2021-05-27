@@ -5,7 +5,6 @@ date: 2021-03-13 22:41:51
 tags: 干货
 ---
 *本文将教你如何免费搭建属于自己的博客。如你所看到的。*
-<!--more-->
 
 # 前言
 使用GitHub pages 服务搭建博客的好处
@@ -17,6 +16,7 @@ tags: 干货
 4. 数据安全，可使用Git版本管理；
 5. 跨平台编写
 ```
+<!--more-->
 ## 准备工作
 * 一个GitHub账号，最好新注册一个
 * Node.js
@@ -219,3 +219,14 @@ sudo kill -9 3531
 ```
 [1]  + 3531 killed     xxx
 ```
+
+### hexo tags 404
+#### 解决办法
+在hexo目录中执行一下命令
+```
+hexo new page "tags" 
+hexo new page "categories"
+```
+打开它们并相应添加type: "tags"和type: "categories"，保存
+![](hexo_add_tags.png)
+![](hexo_add_categories.png)
