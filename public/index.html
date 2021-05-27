@@ -117,12 +117,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">2</span></a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">2</span></a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">3</span></a>
 
   </li>
   </ul>
@@ -148,6 +148,72 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://workingsoul.cn/2021/05/27/%E4%BA%8C%E3%80%81Dart%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JackChen">
+      <meta itemprop="description" content="我会在这里记录我的生活和学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="啊哲博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/27/%E4%BA%8C%E3%80%81Dart%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/" class="post-title-link" itemprop="url">二、Dart常量、变量</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-27 22:27:51 / 修改时间：22:59:09" itemprop="dateCreated datePublished" datetime="2021-05-27T22:27:51+08:00">2021-05-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>dart是一个强大的脚本类语言，可以不预先定义变量类型，自动会类型推倒<br>dart中定义变量可以通过var关键字可以通过类型来申明变量</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/27/%E4%BA%8C%E3%80%81Dart%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -183,7 +249,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-27 17:23:31" itemprop="dateModified" datetime="2021-05-27T17:23:31+08:00">2021-05-27</time>
+                <time title="修改时间：2021-05-27 23:00:37" itemprop="dateModified" datetime="2021-05-27T23:00:37+08:00">2021-05-27</time>
               </span>
 
           
@@ -197,22 +263,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <a id="more"></a>
-<h1 id="安装Dart"><a href="#安装Dart" class="headerlink" title="安装Dart"></a>安装Dart</h1><p>使用终端 输入以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew tap dart-lang&#x2F;dart</span><br><span class="line">brew install dart</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/dart_lang_install.png"><br><img src="/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/dart_install.png"><br>如果电脑没有安装 <code>brew</code> 则先使用以下命令安装brew</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;HEAD&#x2F;install.sh)&quot;</span><br></pre></td></tr></table></figure>
-<h1 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h1><p>下载<a target="_blank" rel="noopener" href="https://macwk.com/soft/visual-studio-code">VSCode</a>  并根据提示安装<br>安装Dart插件<br><img src="/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/vscode_install_dart.png"><br>安装code runner 插件<br><img src="/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/vscode_install_code_runner.png"></p>
-<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><p>新建一个test.dart文件，输入以下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">main()&#123;</span><br><span class="line">    print(&quot;Hello word&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行之后会在控制台输出<code>Hello word</code>则证明环境配置完成</p>
-<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h2 id="brew-install-dart-失败"><a href="#brew-install-dart-失败" class="headerlink" title="brew install dart 失败"></a>brew install dart 失败</h2><p>报错如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;&gt; Installing dart from dart-lang&#x2F;dart</span><br><span class="line">&#x3D;&#x3D;&gt; Downloading https:&#x2F;&#x2F;storage.googleapis.com&#x2F;dart-archive&#x2F;channels&#x2F;stable&#x2F;release&#x2F;2.13.1&#x2F;sdk&#x2F;dartsdk-macos-x</span><br><span class="line">-&#x3D;O&#x3D;-         #    #    #     #</span><br><span class="line">curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to storage.googleapis.com:443</span><br><span class="line">Error: Failed to download resource &quot;dart&quot;</span><br><span class="line">Download failed: https:&#x2F;&#x2F;storage.googleapis.com&#x2F;dart-archive&#x2F;channels&#x2F;stable&#x2F;release&#x2F;2.13.1&#x2F;sdk&#x2F;dartsdk-macos-x64-release.zip</span><br></pre></td></tr></table></figure>
-<p>原因嘛，就是下载失败了<br>解决办法，使用brew缓存，仔细观察报错信息，你会发现下载失败的时候，下载地址已经暴露出来了，你可以手动下载这个包到本地，然后放到brew的缓存目录下<br>获取brew缓存路径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew --cache</span><br><span class="line">&#x2F;Users&#x2F;jackchen&#x2F;Library&#x2F;Caches&#x2F;Homebrew</span><br></pre></td></tr></table></figure>
-<p>下载并拷贝安装包到此目录之后再次执行 <code>brew install dart</code>, 不出意外的话会成功<br>出了意外请参考以下链接<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40028324/article/details/105692357">mac安装dart报错curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to storage.googleapis.com</a></p>
-<p><em>再提供一个最终办法，用手机热点</em></p>
-
+          <h1 id="在Mac上搭建Flutter环境"><a href="#在Mac上搭建Flutter环境" class="headerlink" title="在Mac上搭建Flutter环境"></a>在Mac上搭建Flutter环境</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -262,7 +321,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-26 22:21:02" itemprop="dateModified" datetime="2021-05-26T22:21:02+08:00">2021-05-26</time>
+                <time title="修改时间：2021-05-27 23:01:27" itemprop="dateModified" datetime="2021-05-27T23:01:27+08:00">2021-05-27</time>
               </span>
 
           
@@ -367,14 +426,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

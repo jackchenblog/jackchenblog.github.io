@@ -58,7 +58,7 @@
 <meta property="og:image" content="http://workingsoul.cn/2021/03/13/hexo-github/hexo_add_tags.png">
 <meta property="og:image" content="http://workingsoul.cn/2021/03/13/hexo-github/hexo_add_categories.png">
 <meta property="article:published_time" content="2021-03-13T14:41:51.000Z">
-<meta property="article:modified_time" content="2021-05-26T14:21:02.404Z">
+<meta property="article:modified_time" content="2021-05-27T15:01:27.676Z">
 <meta property="article:author" content="JackChen">
 <meta property="article:tag" content="干货">
 <meta name="twitter:card" content="summary">
@@ -151,12 +151,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">2</span></a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">2</span></a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">3</span></a>
 
   </li>
   </ul>
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-26 22:21:02" itemprop="dateModified" datetime="2021-05-26T22:21:02+08:00">2021-05-26</time>
+                <time title="修改时间：2021-05-27 23:01:27" itemprop="dateModified" datetime="2021-05-27T23:01:27+08:00">2021-05-27</time>
               </span>
 
           
@@ -242,55 +242,55 @@
 <li>npm</li>
 </ul>
 <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><p>创建仓库<br><img src="/2021/03/13/hexo-github/github_new.png"><br><img src="/2021/03/13/hexo-github/github_creat_project.png"><br>配置ssh key<br>检查是否配置ssh key</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p>生成ssh key</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的Email&quot;</span><br><span class="line">然后一路回车</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的Email&quot;</span></span><br><span class="line">然后一路回车</span><br></pre></td></tr></table></figure>
 <p>查看ssh key</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/cat_sshkey.png"><br>复制ssh key，打开GitHub setting<br><img src="/2021/03/13/hexo-github/github_setting.png"><br><img src="/2021/03/13/hexo-github/github_new_ssh.png"><br><img src="/2021/03/13/hexo-github/github_creat_sshkey.png"><br><img src="/2021/03/13/hexo-github/github_sshkey_created.png"><br>测试ssh key是否可用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com # 注意邮箱地址不用改</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com <span class="comment"># 注意邮箱地址不用改</span></span><br></pre></td></tr></table></figure>
 <p>如果提示 <em>Are you sure you want to continue connecting (yes/no)?</em> ，输入yes，然后会看到：<br><code>Hi liuxianan! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>看到这个信息说明SSH已配置成功！<br>此时你还需要配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;liuxianan&quot;&#x2F;&#x2F; 你的github用户名，非昵称</span><br><span class="line">git config --global user.email  &quot;xxx@qq.com&quot;&#x2F;&#x2F; 填写你的github注册邮箱</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;liuxianan&quot;</span>// 你的github用户名，非昵称</span><br><span class="line">git config --global user.email  <span class="string">&quot;xxx@qq.com&quot;</span>// 填写你的github注册邮箱</span><br></pre></td></tr></table></figure>
 <p>至此 ssh key 配置完成</p>
 <h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><p>打开<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">官网</a>，下载LTS<br><img src="/2021/03/13/hexo-github/Node.js_download.png"><br><img src="/2021/03/13/hexo-github/Node.js_install.png"><br>双击安装</p>
 <h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>检查是否安装Git</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/git_version.png"><br>出现 <em>git version 2.24.3 (Apple Git-128)</em> 则证明安装成功<br>如果没有安装Git 使用以下命令安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
 <h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>检查是否安装npm</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm --version</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm --version</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/npm_versaion.png"><br>出现 版本号 则证明安装成功<br>如果没有安装npm 使用以下命令安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install npm</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install npm</span><br></pre></td></tr></table></figure>
 <p><em>至此环境已经配置完成</em></p>
 <h2 id="Hexo配置"><a href="#Hexo配置" class="headerlink" title="Hexo配置"></a>Hexo配置</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>使用npm安装hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo -g</span><br></pre></td></tr></table></figure>
 <p>检查hexo是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
 <p>出现 <em>hexo-cli: 4.2.0</em> 证明安装成功<br>创建hexo目录（<em>目录需要为空文件夹</em>）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd hexo</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo</span><br></pre></td></tr></table></figure>
 <p>初始化hexo 过程可能会长一些</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 <p>出现 <em>INFO  Start blogging with Hexo!</em> 说明初始化成功<br>安装所需要的组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/hexo_npm_install.png"></p>
 <p>编译 hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/hexo_g_success.png"><br>开启服务器 本地体验hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/hexo_s_success.png"><br>浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 可以看到效果</p>
 <h2 id="开始写文章"><a href="#开始写文章" class="headerlink" title="开始写文章"></a>开始写文章</h2><p>创建第一篇文章<br>如果你使用 <em>hexo s</em> 开启了本地浏览器 需要使用 Ctrl+C<br>进入hexo文件夹</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hexo</span><br><span class="line">hexo new &quot;My First Blog&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line">hexo new <span class="string">&quot;My First Blog&quot;</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/hexo_creat_blog.png"><br><img src="/2021/03/13/hexo-github/hexo_creat_blog_finder.png"><br>开启本地浏览器则可以看到你的文章了<br><img src="/2021/03/13/hexo-github/hexo_craet_blog_web.png"><br>如果你需要写文章 只需要编辑 <em>My-First-Blog.md</em>即可</p>
 <h2 id="部署到GitHub上"><a href="#部署到GitHub上" class="headerlink" title="部署到GitHub上"></a>部署到GitHub上</h2><p>如果你使用 <em>hexo s</em> 开启了本地浏览器 需要使用 Ctrl+C<br>1、 clean</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/hexo_clean.png"><br>2、 编译</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/hexo_g.png"><br>3、 发布</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/git_d_success.png"><br>打开 你的github pages 主页<br>例如 我的是 <a target="_blank" rel="noopener" href="https://jackchenblog.github.io/">https://jackchenblog.github.io/</a> 就能看到你的文章了<br><img src="/2021/03/13/hexo-github/github.io.png"></p>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><h3 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image -- save</span><br></pre></td></tr></table></figure>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><h3 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image -- save</span><br></pre></td></tr></table></figure>
 <p>修改 hexo 目录下, _config.yml文件配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>此时使用 <code>hexo n blog-name</code>创建新文章时会同时创建一个对应名字的文件夹<br>只需吧你需要的图片放入文件夹，在你需要的位置写入图片语法即可，例如<br><img src="/2021/03/13/hexo-github/hexo_inster_image.png"></p>
 <h2 id="绑定自己的域名-看自己需要"><a href="#绑定自己的域名-看自己需要" class="headerlink" title="绑定自己的域名(看自己需要)"></a>绑定自己的域名(看自己需要)</h2><h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>推荐使用阿里云，首年有优惠<br>购买完成之后需要实名认证，域名备案，这些可以根据提示完成</p>
 <h3 id="绑定到你的github-io"><a href="#绑定到你的github-io" class="headerlink" title="绑定到你的github.io"></a>绑定到你的github.io</h3><p>打开阿里云控制台，点击域名，你可以看到你购买的域名，点击<em>解析</em><br><img src="/2021/03/13/hexo-github/domain_name_list.png"><br><img src="/2021/03/13/hexo-github/domain_name_add.png"><br><img src="/2021/03/13/hexo-github/domain_name_add_info.png"></p>
@@ -298,18 +298,18 @@
 <p>域名配置最常见有2种方式，CNAME和A记录，CNAME填写域名，A记录填写IP，由于不带www方式只能采用A记录，所以必须先ping一下你的用户名.github.io的IP，然后到你的域名DNS设置页，将A记录指向你ping出来的IP，将CNAME指向你的用户名.github.io，这样可以保证无论是否添加www都可以访问</p>
 </blockquote>
 <p>然后到你hexo-&gt;public目录新建一个名为CNAME的文件（无后缀），里面填写你的域名<br>可直接使用命令生成 并发布到GitHub</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd hexo</span><br><span class="line">echo abcd.com &gt; .&#x2F;public&#x2F;CNAME</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line"><span class="built_in">echo</span> abcd.com &gt; ./public/CNAME</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/CNAME_finder.png"></p>
 <p>稍等几分钟，访问你购买的域名，你就能看到你的博客了。</p>
-<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><h3 id="hexo-s-失败-端口被占用"><a href="#hexo-s-失败-端口被占用" class="headerlink" title="hexo s 失败(端口被占用)"></a>hexo s 失败(端口被占用)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><h3 id="hexo-s-失败-端口被占用"><a href="#hexo-s-失败-端口被占用" class="headerlink" title="hexo s 失败(端口被占用)"></a>hexo s 失败(端口被占用)</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/hexo_s_port_used.png"><br>hexo 默认端口为4000 首先检查4000端口是谁在占用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i tcp:4000</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i tcp:4000</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/port_check.png"><br>占用4000端口的为node 如果你认识这个进程 可以使用以下命令结束它<br>如果你不认识它 你也可以kill掉他 不过 不保证有什么后果😛</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kill -9 3531</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">kill</span> -9 3531</span><br></pre></td></tr></table></figure>
 <p>3531 为PID 所对应的值  结束进程成功有如下提示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1]  + 3531 killed     xxx</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1]  + 3531 killed     xxx</span><br></pre></td></tr></table></figure>
 <h3 id="hexo-tags-404"><a href="#hexo-tags-404" class="headerlink" title="hexo tags 404"></a>hexo tags 404</h3><h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>在hexo目录中执行一下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;tags&quot; </span><br><span class="line">hexo new page &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tags&quot;</span> </span><br><span class="line">hexo new page <span class="string">&quot;categories&quot;</span></span><br></pre></td></tr></table></figure>
 <p>打开它们并相应添加type: “tags”和type: “categories”，保存<br><img src="/2021/03/13/hexo-github/hexo_add_tags.png"><br><img src="/2021/03/13/hexo-github/hexo_add_categories.png"></p>
 
     </div>
@@ -405,14 +405,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

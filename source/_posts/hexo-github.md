@@ -2,7 +2,7 @@
 toc: true
 title: 使用hexo+github搭建博客
 date: 2021-03-13 22:41:51
-tags: 干货
+tags: [干货]
 ---
 *本文将教你如何免费搭建属于自己的博客。如你所看到的。*
 
@@ -30,16 +30,16 @@ tags: 干货
 ![](github_creat_project.png)
 配置ssh key
 检查是否配置ssh key
-```
+``` sh
 cat ~/.ssh/id_rsa.pub
-```
+``` 
 生成ssh key
-```
+``` sh
 ssh-keygen -t rsa -C "你的Email"
 然后一路回车
 ```
 查看ssh key
-```
+``` sh
 cat ~/.ssh/id_rsa.pub
 ```
 ![](cat_sshkey.png)
@@ -49,14 +49,14 @@ cat ~/.ssh/id_rsa.pub
 ![](github_creat_sshkey.png)
 ![](github_sshkey_created.png)
 测试ssh key是否可用
-```
+``` sh
 ssh -T git@github.com # 注意邮箱地址不用改
 ```
 如果提示 *Are you sure you want to continue connecting (yes/no)?* ，输入yes，然后会看到：
 `Hi liuxianan! You've successfully authenticated, but GitHub does not provide shell access.`
 看到这个信息说明SSH已配置成功！
 此时你还需要配置：
-```
+``` sh
  git config --global user.name "liuxianan"// 你的github用户名，非昵称
  git config --global user.email  "xxx@qq.com"// 填写你的github注册邮箱
 ```
@@ -68,24 +68,24 @@ ssh -T git@github.com # 注意邮箱地址不用改
 双击安装
 ### Git
 检查是否安装Git
-```
+``` sh
 git --version
 ```
 ![](git_version.png)
 出现 *git version 2.24.3 (Apple Git-128)* 则证明安装成功
 如果没有安装Git 使用以下命令安装
-```
+``` sh
 brew install git
 ```
 ### npm
 检查是否安装npm
-```
+``` sh
 npm --version
 ```
 ![](npm_versaion.png)
 出现 版本号 则证明安装成功
 如果没有安装npm 使用以下命令安装
-```
+``` sh
 brew install npm
 ```
 
@@ -94,36 +94,36 @@ brew install npm
 ## Hexo配置
 ### 安装Hexo
 使用npm安装hexo
-```
+``` sh
 sudo npm install hexo -g
 ```
 检查hexo是否安装成功
-```
+``` sh
 hexo -v
 ```
 出现 *hexo-cli: 4.2.0* 证明安装成功
 创建hexo目录（*目录需要为空文件夹*）
-```
+``` sh
 cd hexo
 ```
 初始化hexo 过程可能会长一些
-```
+``` sh
 hexo init
 ```
 出现 *INFO  Start blogging with Hexo!* 说明初始化成功
 安装所需要的组件
-```
+``` sh
 npm install
 ```
 ![](hexo_npm_install.png)
 
 编译 hexo
-```
+``` sh
 hexo g
 ```
 ![](hexo_g_success.png)
 开启服务器 本地体验hexo
-```
+``` sh
 hexo s
 ```
 ![](hexo_s_success.png)
@@ -133,7 +133,7 @@ hexo s
 创建第一篇文章
 如果你使用 *hexo s* 开启了本地浏览器 需要使用 Ctrl+C
 进入hexo文件夹
-```
+``` sh
 cd hexo
 hexo new "My First Blog"
 ```
@@ -146,17 +146,17 @@ hexo new "My First Blog"
 ## 部署到GitHub上
 如果你使用 *hexo s* 开启了本地浏览器 需要使用 Ctrl+C
 1、 clean
-```
+``` sh
 hexo clean
 ```
 ![](hexo_clean.png)
 2、 编译
-``` 
+```  sh
 hexo g
 ```
 ![](hexo_g.png)
 3、 发布
-```
+``` sh
 hexo d
 ```
 ![](git_d_success.png)
@@ -166,11 +166,11 @@ hexo d
 
 ## 安装插件
 ### 图片插件
-```
+``` sh
 npm install https://github.com/CodeFalling/hexo-asset-image -- save
 ```
 修改 hexo 目录下, _config.yml文件配置
-```
+``` sh
 post_asset_folder: true
 ```
 此时使用 `hexo n blog-name`创建新文章时会同时创建一个对应名字的文件夹
@@ -190,7 +190,7 @@ post_asset_folder: true
 
 然后到你hexo->public目录新建一个名为CNAME的文件（无后缀），里面填写你的域名
 可直接使用命令生成 并发布到GitHub
-```
+``` sh
 cd hexo
 echo abcd.com > ./public/CNAME
 hexo d -g
@@ -201,29 +201,29 @@ hexo d -g
 
 ## 错误处理
 ### hexo s 失败(端口被占用)
-```
+``` sh
 hexo s
 ```
 ![](hexo_s_port_used.png)
 hexo 默认端口为4000 首先检查4000端口是谁在占用
-```
+``` sh
 lsof -i tcp:4000
 ```
 ![](port_check.png)
 占用4000端口的为node 如果你认识这个进程 可以使用以下命令结束它
 如果你不认识它 你也可以kill掉他 不过 不保证有什么后果😛
-```
+``` sh
 sudo kill -9 3531
 ```
 3531 为PID 所对应的值  结束进程成功有如下提示
-```
+``` sh
 [1]  + 3531 killed     xxx
 ```
 
 ### hexo tags 404
 #### 解决办法
 在hexo目录中执行一下命令
-```
+``` sh
 hexo new page "tags" 
 hexo new page "categories"
 ```

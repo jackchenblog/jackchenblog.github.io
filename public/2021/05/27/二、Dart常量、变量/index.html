@@ -20,26 +20,21 @@
     var CONFIG = {"hostname":"workingsoul.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="在Mac上搭建Flutter环境">
+  <meta name="description" content="前言dart是一个强大的脚本类语言，可以不预先定义变量类型，自动会类型推倒dart中定义变量可以通过var关键字可以通过类型来申明变量">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一、Mac-安装Flutter-环境-VSCode-配置">
-<meta property="og:url" content="http://workingsoul.cn/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="二、Dart常量、变量">
+<meta property="og:url" content="http://workingsoul.cn/2021/05/27/%E4%BA%8C%E3%80%81Dart%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/index.html">
 <meta property="og:site_name" content="啊哲博客">
-<meta property="og:description" content="在Mac上搭建Flutter环境">
+<meta property="og:description" content="前言dart是一个强大的脚本类语言，可以不预先定义变量类型，自动会类型推倒dart中定义变量可以通过var关键字可以通过类型来申明变量">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://workingsoul.cn/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/dart_lang_install.png">
-<meta property="og:image" content="http://workingsoul.cn/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/dart_install.png">
-<meta property="og:image" content="http://workingsoul.cn/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/vscode_install_dart.png">
-<meta property="og:image" content="http://workingsoul.cn/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/vscode_install_code_runner.png">
-<meta property="article:published_time" content="2021-05-26T14:12:15.000Z">
-<meta property="article:modified_time" content="2021-05-27T15:00:37.247Z">
+<meta property="article:published_time" content="2021-05-27T14:27:51.000Z">
+<meta property="article:modified_time" content="2021-05-27T14:59:09.683Z">
 <meta property="article:author" content="JackChen">
 <meta property="article:tag" content="Flutter">
 <meta property="article:tag" content="Dart">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://workingsoul.cn/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/dart_lang_install.png">
 
-<link rel="canonical" href="http://workingsoul.cn/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/">
+<link rel="canonical" href="http://workingsoul.cn/2021/05/27/%E4%BA%8C%E3%80%81Dart%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/">
 
 
 <script id="page-configurations">
@@ -52,7 +47,7 @@
   };
 </script>
 
-  <title>一、Mac-安装Flutter-环境-VSCode-配置 | 啊哲博客</title>
+  <title>二、Dart常量、变量 | 啊哲博客</title>
   
 
 
@@ -162,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://workingsoul.cn/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="http://workingsoul.cn/2021/05/27/%E4%BA%8C%E3%80%81Dart%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -175,7 +170,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          一、Mac-安装Flutter-环境-VSCode-配置
+          二、Dart常量、变量
         </h1>
 
         <div class="post-meta">
@@ -184,16 +179,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-26 22:12:15" itemprop="dateCreated datePublished" datetime="2021-05-26T22:12:15+08:00">2021-05-26</time>
+              <time title="创建时间：2021-05-27 22:27:51 / 修改时间：22:59:09" itemprop="dateCreated datePublished" datetime="2021-05-27T22:27:51+08:00">2021-05-27</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-27 23:00:37" itemprop="dateModified" datetime="2021-05-27T23:00:37+08:00">2021-05-27</time>
-              </span>
 
           
 
@@ -206,22 +195,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="在Mac上搭建Flutter环境"><a href="#在Mac上搭建Flutter环境" class="headerlink" title="在Mac上搭建Flutter环境"></a>在Mac上搭建Flutter环境</h1><a id="more"></a>
-<h1 id="安装Dart"><a href="#安装Dart" class="headerlink" title="安装Dart"></a>安装Dart</h1><p>使用终端 输入以下命令</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew tap dart-lang/dart</span><br><span class="line">brew install dart</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/dart_lang_install.png"><br><img src="/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/dart_install.png"><br>如果电脑没有安装 <code>brew</code> 则先使用以下命令安装brew</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h1><p>下载<a target="_blank" rel="noopener" href="https://macwk.com/soft/visual-studio-code">VSCode</a>  并根据提示安装<br>安装Dart插件<br><img src="/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/vscode_install_dart.png"><br>安装code runner 插件<br><img src="/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/vscode_install_code_runner.png"></p>
-<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><p>新建一个test.dart文件，输入以下代码</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">main()&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello word&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行之后会在控制台输出<code>Hello word</code>则证明环境配置完成</p>
-<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h2 id="brew-install-dart-失败"><a href="#brew-install-dart-失败" class="headerlink" title="brew install dart 失败"></a>brew install dart 失败</h2><p>报错如下</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">==&gt; Installing dart from dart-lang/dart</span><br><span class="line">==&gt; Downloading https://storage.googleapis.com/dart-archive/channels/stable/release/2.13.1/sdk/dartsdk-macos-x</span><br><span class="line">-=O=-         <span class="comment">#    #    #     #</span></span><br><span class="line">curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL <span class="keyword">in</span> connection to storage.googleapis.com:443</span><br><span class="line">Error: Failed to download resource <span class="string">&quot;dart&quot;</span></span><br><span class="line">Download failed: https://storage.googleapis.com/dart-archive/channels/stable/release/2.13.1/sdk/dartsdk-macos-x64-release.zip</span><br></pre></td></tr></table></figure>
-<p>原因嘛，就是下载失败了<br>解决办法，使用brew缓存，仔细观察报错信息，你会发现下载失败的时候，下载地址已经暴露出来了，你可以手动下载这个包到本地，然后放到brew的缓存目录下<br>获取brew缓存路径</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew --cache</span><br><span class="line">/Users/jackchen/Library/Caches/Homebrew</span><br></pre></td></tr></table></figure>
-<p>下载并拷贝安装包到此目录之后再次执行 <code>brew install dart</code>, 不出意外的话会成功<br>出了意外请参考以下链接<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40028324/article/details/105692357">mac安装dart报错curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to storage.googleapis.com</a></p>
-<p><em>再提供一个最终办法，用手机热点</em></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>dart是一个强大的脚本类语言，可以不预先定义变量类型，自动会类型推倒<br>dart中定义变量可以通过var关键字可以通过类型来申明变量</p>
+<a id="more"></a>
 
+<h1 id="程序入口"><a href="#程序入口" class="headerlink" title="程序入口"></a>程序入口</h1><p>main函数为没个类的入口，程序的开始即为main</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">main() &#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="comment">// void 代表函数没有返回值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义String类型</span></span><br><span class="line"><span class="comment">// var定义交由dart自动判断类型</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;abcd&quot;</span>;</span><br><span class="line"><span class="comment">// 类型修饰，直接定义此变量类型</span></span><br><span class="line"><span class="built_in">String</span> str1 = <span class="string">&quot;abcd&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义int类型</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">12</span>;</span><br><span class="line"><span class="built_in">int</span> yourAge = <span class="number">12</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>!!! var 不可与 int 同时写</strong></p>
+<h1 id="常量-final-和-const"><a href="#常量-final-和-const" class="headerlink" title="常量: final 和 const"></a>常量: final 和 const</h1><p>const值不变一开始就得赋值<br>final可以开始不赋值只能赋一次;而final不仅有 const的编译时常量的特性，最重要的它是运行时<br>永远不改量的量，请使用final或const修饰它，而不是使用var或其他变量类型。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义String类型</span></span><br><span class="line"><span class="keyword">const</span> name = <span class="string">&quot;Jack&quot;</span>;</span><br><span class="line"><span class="keyword">final</span> name1 = <span class="string">&quot;Bob&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义int</span></span><br><span class="line"><span class="keyword">const</span> age = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">final</span> age1 = <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">区别：</span></span><br><span class="line"><span class="comment">const 定义时就需要赋值；</span></span><br><span class="line"><span class="comment">final 可以使用的时候再赋值，类似于懒加载；</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 例如使用final定义一个当前时间，每次运行都会获取最新的时间</span></span><br><span class="line"><span class="keyword">final</span> nowTime = <span class="keyword">new</span> <span class="built_in">DateTime</span>.now();</span><br><span class="line"><span class="built_in">print</span>(nowTime);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="Dart的命名规则"><a href="#Dart的命名规则" class="headerlink" title="Dart的命名规则:"></a>Dart的命名规则:</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、变量名称必须由数字、字母、下划线和美元符($)组成</span><br><span class="line">2.注意:标识符开头不能是数字</span><br><span class="line">3.标识符不能是保留字和关键字。</span><br><span class="line">4.变量的名字是区分大小写的如: age和Age是不同的变量。在实际的运用中，也建议，不要用一个</span><br><span class="line">5、标识符(变量名称)一定要见名思意:变量名称建议用名词，方法名称建议用动词</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -240,13 +223,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/03/13/hexo-github/" rel="prev" title="使用hexo+github搭建博客">
-      <i class="fa fa-chevron-left"></i> 使用hexo+github搭建博客
+    <a href="/2021/05/26/%E4%B8%80%E3%80%81Mac-%E5%AE%89%E8%A3%85Flutter-%E7%8E%AF%E5%A2%83-VSCode-%E9%85%8D%E7%BD%AE/" rel="prev" title="一、Mac-安装Flutter-环境-VSCode-配置">
+      <i class="fa fa-chevron-left"></i> 一、Mac-安装Flutter-环境-VSCode-配置
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/05/27/%E4%BA%8C%E3%80%81Dart%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F/" rel="next" title="二、Dart常量、变量">
-      二、Dart常量、变量 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -305,7 +285,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8Mac%E4%B8%8A%E6%90%AD%E5%BB%BAFlutter%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">在Mac上搭建Flutter环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Dart"><span class="nav-number">2.</span> <span class="nav-text">安装Dart</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VSCode"><span class="nav-number">3.</span> <span class="nav-text">VSCode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#brew-install-dart-%E5%A4%B1%E8%B4%A5"><span class="nav-number">5.1.</span> <span class="nav-text">brew install dart 失败</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%85%A5%E5%8F%A3"><span class="nav-number">2.</span> <span class="nav-text">程序入口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F-final-%E5%92%8C-const"><span class="nav-number">4.</span> <span class="nav-text">常量: final 和 const</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dart%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="nav-number">5.</span> <span class="nav-text">Dart的命名规则:</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
