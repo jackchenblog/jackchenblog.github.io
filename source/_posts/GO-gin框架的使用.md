@@ -23,3 +23,184 @@ cd server
 go mod init server
 go mod tidy # 添加引用
 ```
+
+## 启动服务
+
+```go
+package main
+
+import "github.com/gin-gonic/gin"
+
+func main() {
+	r := gin.Default()
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
+	})
+	r.Run() 
+	// 访问 127.0.0.1:8080/ping
+}
+```
+
+![](get_ping.png)
+
+# 获取参数
+## 获取path上的参数
+```go
+package main
+
+import (
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	// GET请求
+	r.GET("/user/:name", func(c *gin.Context) {
+		name := c.Param("name")
+		c.JSON(200, gin.H{
+			"name": name,
+		})
+	})
+	r.GET("/user/:name/*action", func(c *gin.Context) {
+		name := c.Param("name")
+		action := c.Param("action")
+		message := name + " is " + action
+		c.JSON(200, gin.H{
+			"name":    name,
+			"action":  action,
+			"message": message,
+		})
+	})
+	
+	// POST 请求
+	r.POST("/user/:name/*action", func(c *gin.Context) {
+		ok := c.FullPath() == "/user/:name/*action" // true
+		if ok {
+			name := c.Param("name")
+			action := c.Param("action")
+			c.JSON(200, gin.H{
+				"status": ok,
+				"name":   name,
+				"action": action,
+			})
+		}
+	})
+	r.Run()
+}
+```
+![](user_name_get.png)
+![](user_name_post.png)
+*疑问：为什么用‘***’接收Path参数时，得到的是一个‘/action’*
+
+## 获取parameters上的参数
+```go
+package main
+
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	r.GET("/welcome", func(c *gin.Context) {
+	// 在没有传入firstname参数时，firstname默认为Guest
+		firstname := c.DefaultQuery("firstname", "Guest")
+		lastname := c.Query("lastname")
+		c.String(http.StatusOK, "Hello %s %s", firstname, lastname)
+	})
+	r.Run()
+}
+
+```
+![](welcome_one.png)
+![](welcome_tow.png)
+
+## 获取form_data参数
+```go
+package main
+
+import (
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	r.POST("/form_post", func(c *gin.Context) {
+		message := c.PostForm("message")
+		nick := c.DefaultPostForm("nick", "anonymous")
+
+		c.JSON(200, gin.H{
+			"status":  "posted",
+			"message": message,
+			"nick":    nick,
+		})
+	})
+	r.Run()
+}
+```
+![](form_data_post.png)
+
+## post 获取URL上的参数
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	r.POST("/post", func(c *gin.Context) {
+    // 取URL中的参数
+		id := c.Query("id")
+		// 如果URL中没有对应的值page 则默认值为0
+		page := c.DefaultQuery("page", "0")
+		// 从form_data中取参数
+		name := c.PostForm("name")
+		message := c.PostForm("message")
+
+		fmt.Printf("id: %s; page: %s; name: %s; message: %s", id, page, name, message)
+	})
+	r.Run()
+}
+```
+`127.0.0.1:8080/post?id=1234&page=1&message=哈哈哈哈&name=Jack`
+
+```sh
+id: 1234; page: 1; name: ; message: [GIN] 2021/06/29 - 22:19:27 | 200 |      45.136µs |       127.0.0.1 | POST     "/post?id=1234&page=1&message=%E5%93%88%E5%93%88%E5%93%88%E5%93%88&name=Jack"
+```
+## post获取map表单参数
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	r.POST("/post", func(c *gin.Context) {
+
+		ids := c.QueryMap("ids")
+		names := c.PostFormMap("names")
+
+		fmt.Printf("ids: %v; names: %v", ids, names)
+	})
+	r.Run()
+}
+
+```
+
+![](post_map.png)
+
+```sh
+ids: map[a:1234 b:hello]; names: map[a:哈哈哈 b:呵呵呵][GIN] 2021/06/29 - 22:43:02 | 200 |     498.003µs |       127.0.0.1 | POST     "/post?ids[a]=1234&ids[b]=hello"
+```
