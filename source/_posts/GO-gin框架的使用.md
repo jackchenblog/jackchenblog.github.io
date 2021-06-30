@@ -204,3 +204,97 @@ func main() {
 ```sh
 ids: map[a:1234 b:hello]; names: map[a:哈哈哈 b:呵呵呵][GIN] 2021/06/29 - 22:43:02 | 200 |     498.003µs |       127.0.0.1 | POST     "/post?ids[a]=1234&ids[b]=hello"
 ```
+
+## 分组路由-Grouping routes
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	router := gin.Default()
+
+	// Simple group: v1
+	v1 := router.Group("/v1")
+	{
+		v1.POST("/login", loginEndpoint)
+	}
+
+	// Simple group: v2
+	v2 := router.Group("/v2")
+	{
+		v2.POST("/login", login)
+	}
+
+	router.Run(":8080")
+
+}
+
+func loginEndpoint(c *gin.Context) {
+	fmt.Println("v1 路由")
+}
+
+func login(c *gin.Context) {
+	fmt.Println("v2 路由")
+}
+
+```
+
+```sh
+localhost:8080/v1/login
+# v1 路由
+localhost:8080/v2/login
+# v2 路由
+```
+
+## 中间件
+- 中间件可以预处理请求
+- 如果请求中的参数不符合要求，那么将不会进入到路由函数中
+
+```go
+package main
+
+import (
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.New()
+	r.Use(MiddlewareName())
+	r.GET("/setName", func(c *gin.Context) {
+		// 如果满足中间件条件，则会进入此结构体中，此时可以做正确的返回操作
+		name := c.Query("name")
+		c.JSON(200, gin.H{
+			"name": name,
+		})
+	})
+
+}
+
+func MiddlewareName() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		name := c.Query("name")
+		// 判断输入的字符是否小于5个
+		if len(name) > 5 {
+			c.AbortWithStatusJSON(400, "输入的年龄最大不能超过4个字符")
+			return
+		}
+	}
+}
+
+```
+
+```sh
+localhost:8080/setname
+# "name参数缺失"
+localhost:8080/setname?name=Jack
+# {
+#    "name": "Jack"
+# }
+localhost:8080/setname?name=JackChen
+# "输入的年龄最大不能超过4个字符"
+```

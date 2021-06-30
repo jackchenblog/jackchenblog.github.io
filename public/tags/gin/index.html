@@ -20,20 +20,17 @@
     var CONFIG = {"hostname":"workingsoul.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="程序异常怎么办？？？处理它！！！">
-<meta property="og:type" content="article">
-<meta property="og:title" content="十四、异常处理">
-<meta property="og:url" content="http://workingsoul.cn/2021/06/27/%E5%8D%81%E5%9B%9B%E3%80%81%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/index.html">
+  <meta name="description" content="我会在这里记录我的生活和学习">
+<meta property="og:type" content="website">
+<meta property="og:title" content="啊哲博客">
+<meta property="og:url" content="http://workingsoul.cn/tags/gin/index.html">
 <meta property="og:site_name" content="啊哲博客">
-<meta property="og:description" content="程序异常怎么办？？？处理它！！！">
+<meta property="og:description" content="我会在这里记录我的生活和学习">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-06-26T16:26:40.000Z">
-<meta property="article:modified_time" content="2021-06-26T16:40:36.277Z">
 <meta property="article:author" content="JackChen">
-<meta property="article:tag" content="GO">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://workingsoul.cn/2021/06/27/%E5%8D%81%E5%9B%9B%E3%80%81%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+<link rel="canonical" href="http://workingsoul.cn/tags/gin/">
 
 
 <script id="page-configurations">
@@ -41,12 +38,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>十四、异常处理 | 啊哲博客</title>
+  <title>标签: gin | 啊哲博客</title>
   
 
 
@@ -149,98 +146,51 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content tag">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://workingsoul.cn/2021/06/27/%E5%8D%81%E5%9B%9B%E3%80%81%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JackChen">
-      <meta itemprop="description" content="我会在这里记录我的生活和学习">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="啊哲博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          十四、异常处理
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-06-27 00:26:40 / 修改时间：00:40:36" itemprop="dateCreated datePublished" datetime="2021-06-27T00:26:40+08:00">2021-06-27</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">gin
+          <small>标签</small>
+        </h2>
+      </div>
 
       
-        <p><strong>程序异常怎么办？？？处理它！！！</strong></p>
-<a id="more"></a>
-
-<h1 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h1><ul>
-<li>延迟执行</li>
-<li>多个延迟语句时，在外层函数结束时，按照从下往上的顺序依次执行</li>
-</ul>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">defer</span> fmt.Println(<span class="string">&quot;111&quot;</span>) </span><br><span class="line"><span class="keyword">defer</span> fmt.Println(<span class="string">&quot;222&quot;</span>) </span><br><span class="line"><span class="comment">// 先执行222 再执行 111</span></span><br></pre></td></tr></table></figure>
-<h1 id="panic"><a href="#panic" class="headerlink" title="panic"></a>panic</h1><ul>
-<li>中断程序运行，主动抛出错误</li>
-</ul>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">panic</span>(<span class="string">&quot;主动抛出错误&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="recover"><a href="#recover" class="headerlink" title="recover"></a>recover</h1><ul>
-<li>不中断程序运行</li>
-<li>有错误返回错误，无错误返回nil</li>
-</ul>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">		<span class="keyword">if</span> err := <span class="built_in">recover</span>(); err != <span class="literal">nil</span> &#123;</span><br><span class="line">			fmt.Println(err) </span><br><span class="line">			<span class="comment">// 捕获到下方抛出的异常 “出错误了” 并恢复程序运行</span></span><br><span class="line">			<span class="comment">// 可以在此处做异常处理逻辑</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;()</span><br><span class="line">	<span class="built_in">panic</span>(<span class="string">&quot;出错误了&quot;</span>) <span class="comment">// 主动抛出异常并结束程序</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <div class="collection-year">
+      <span class="collection-header">2021</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/GO/" rel="tag"># GO</a>
-          </div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-06-29T17:53:38+08:00"
+              content="2021-06-29">
+          06-29
+        </time>
+      </div>
 
-        
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/06/29/GO-gin%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="url">
+            <span itemprop="name">GO-gin框架的使用</span>
+          </a>
+      </div>
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2021/06/26/%E5%8D%81%E4%B8%89%E3%80%81%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" rel="prev" title="十三、文件操作">
-      <i class="fa fa-chevron-left"></i> 十三、文件操作
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/06/27/%E5%8D%81%E4%BA%94%E3%80%81%E7%BB%93%E6%9E%84%E4%BD%93/" rel="next" title="十五、结构体">
-      十五、结构体 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+    </div>
+  </div>
   
   
+  
+
   
 
 
@@ -293,7 +243,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#defer"><span class="nav-number">1.</span> <span class="nav-text">defer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#panic"><span class="nav-number">2.</span> <span class="nav-text">panic</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#recover"><span class="nav-number">3.</span> <span class="nav-text">recover</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
