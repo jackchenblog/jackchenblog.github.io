@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 啊哲博客
+title: 哲哲的博客
 subtitle: ''
-description: '我会在这里记录我的生活和学习'
+description: '努力学习!好好工作!赚钱娶老婆!!!'
 keywords:
 author: JackChen
 language: zh-CN
@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://workingsoul.cn/
+url: http://zhezhe.work/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
