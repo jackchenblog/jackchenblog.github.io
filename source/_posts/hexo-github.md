@@ -144,6 +144,16 @@ hexo new "My First Blog"
 如果你需要写文章 只需要编辑 *My-First-Blog.md*即可
 
 ## 部署到GitHub上
+部署之前需要安装`hexo-deployer-git` 插件，否则你会看到
+```sh
+ERROR Deployer not found: git
+```
+
+```sh
+# 使用以下命令安装
+npm install hexo-deployer-git --save
+```
+
 如果你使用 *hexo s* 开启了本地浏览器 需要使用 Ctrl+C
 1、 clean
 ``` sh
