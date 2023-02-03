@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 6.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -233,8 +233,8 @@
       
         <p><em>本文将教你如何免费搭建属于自己的博客。如你所看到的。</em></p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用GitHub pages 服务搭建博客的好处</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 全是静态文件，访问速度快；</span><br><span class="line">2. 免费，不花钱搭建自己的博客；</span><br><span class="line">3. 可以绑定自己的域名；</span><br><span class="line">4. 数据安全，可使用Git版本管理；</span><br><span class="line">5. 跨平台编写</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 全是静态文件，访问速度快；</span><br><span class="line">2. 免费，不花钱搭建自己的博客；</span><br><span class="line">3. 可以绑定自己的域名；</span><br><span class="line">4. 数据安全，可使用Git版本管理；</span><br><span class="line">5. 跨平台编写</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li>一个GitHub账号，最好新注册一个</li>
 <li>Node.js</li>
@@ -242,14 +242,14 @@
 <li>npm</li>
 </ul>
 <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><p>创建仓库<br><img src="/2021/03/13/hexo-github/github_new.png"><br><img src="/2021/03/13/hexo-github/github_creat_project.png"><br>配置ssh key<br>检查是否配置ssh key</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p>生成ssh key</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的Email&quot;</span></span><br><span class="line">然后一路回车</span><br></pre></td></tr></table></figure>
 <p>查看ssh key</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/cat_sshkey.png"><br>复制ssh key，打开GitHub setting<br><img src="/2021/03/13/hexo-github/github_setting.png"><br><img src="/2021/03/13/hexo-github/github_new_ssh.png"><br><img src="/2021/03/13/hexo-github/github_creat_sshkey.png"><br><img src="/2021/03/13/hexo-github/github_sshkey_created.png"><br>测试ssh key是否可用</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com <span class="comment"># 注意邮箱地址不用改</span></span><br></pre></td></tr></table></figure>
-<p>如果提示 <em>Are you sure you want to continue connecting (yes/no)?</em> ，输入yes，然后会看到：<br><code>Hi liuxianan! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>看到这个信息说明SSH已配置成功！<br>此时你还需要配置：</p>
+<p>如果提示 <em>Are you sure you want to continue connecting (yes&#x2F;no)?</em> ，输入yes，然后会看到：<br><code>Hi liuxianan! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>看到这个信息说明SSH已配置成功！<br>此时你还需要配置：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;liuxianan&quot;</span>// 你的github用户名，非昵称</span><br><span class="line">git config --global user.email  <span class="string">&quot;xxx@qq.com&quot;</span>// 填写你的github注册邮箱</span><br></pre></td></tr></table></figure>
 <p>至此 ssh key 配置完成</p>
 <h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><p>打开<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">官网</a>，下载LTS<br><img src="/2021/03/13/hexo-github/Node.js_download.png"><br><img src="/2021/03/13/hexo-github/Node.js_install.png"><br>双击安装</p>
@@ -261,6 +261,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm --version</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/npm_versaion.png"><br>出现 版本号 则证明安装成功<br>如果没有安装npm 使用以下命令安装</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install npm</span><br></pre></td></tr></table></figure>
+
 <p><em>至此环境已经配置完成</em></p>
 <h2 id="Hexo配置"><a href="#Hexo配置" class="headerlink" title="Hexo配置"></a>Hexo配置</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>使用npm安装hexo</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo -g</span><br></pre></td></tr></table></figure>
@@ -283,7 +284,9 @@
 <p><img src="/2021/03/13/hexo-github/hexo_creat_blog.png"><br><img src="/2021/03/13/hexo-github/hexo_creat_blog_finder.png"><br>开启本地浏览器则可以看到你的文章了<br><img src="/2021/03/13/hexo-github/hexo_craet_blog_web.png"><br>如果你需要写文章 只需要编辑 <em>My-First-Blog.md</em>即可</p>
 <h2 id="部署到GitHub上"><a href="#部署到GitHub上" class="headerlink" title="部署到GitHub上"></a>部署到GitHub上</h2><p>部署之前需要安装<code>hexo-deployer-git</code> 插件，否则你会看到</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用以下命令安装</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
 <p>如果你使用 <em>hexo s</em> 开启了本地浏览器 需要使用 Ctrl+C<br>1、 clean</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/03/13/hexo-github/hexo_clean.png"><br>2、 编译</p>
@@ -311,6 +314,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">kill</span> -9 3531</span><br></pre></td></tr></table></figure>
 <p>3531 为PID 所对应的值  结束进程成功有如下提示</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1]  + 3531 killed     xxx</span><br></pre></td></tr></table></figure>
+
 <h3 id="hexo-tags-404"><a href="#hexo-tags-404" class="headerlink" title="hexo tags 404"></a>hexo tags 404</h3><h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>在hexo目录中执行一下命令</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tags&quot;</span> </span><br><span class="line">hexo new page <span class="string">&quot;categories&quot;</span></span><br></pre></td></tr></table></figure>
 <p>打开它们并相应添加type: “tags”和type: “categories”，保存<br><img src="/2021/03/13/hexo-github/hexo_add_tags.png"><br><img src="/2021/03/13/hexo-github/hexo_add_categories.png"></p>
@@ -435,7 +439,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
